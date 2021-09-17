@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NotFound from './components/pages/NotFound';
 import Adduser from './components/pages/users/Adduser';
 import EditUser from './components/pages/users/EditUser';
+import User from './components/pages/users/User';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/user/add' component={Adduser} />
           <Route exact path='/users/edit/:id' component={EditUser} />
+          <Route exact path='/users/:id' component={User} />
           <Route component={NotFound} />
         </Switch>
       </div>

@@ -20,14 +20,13 @@ function EditUser() {
         loadUser()
     }, [])
     const onSubmit = async e => {
-        e.preventDefult();
-        await axios.post("http://localhost:3003/users", user)
+        e.preventDefault();
+        await axios.put(`http://localhost:3003/users/${id}`, user)
         history.push("/");
     };
     const loadUser = async () => {
-        const result = await axios.get(`http://localhost:3003/users/${id}` + id)
-        console.log(result)
-        // setUser(result.data); 
+        const result = await axios.get(`http://localhost:3003/users/${id}`)
+        setUser(result.data); 
     }
     return (
         <div className="container">

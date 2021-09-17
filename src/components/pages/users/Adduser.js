@@ -16,7 +16,7 @@ function Adduser() {
         setUser({ ...user, [e.target.name]: e.target.value })
     };
     const onSubmit = async e => {
-        e.preventDefult();
+        e.preventDefault();
         await axios.post("http://localhost:3003/users", user)
         history.push("/");
     };
